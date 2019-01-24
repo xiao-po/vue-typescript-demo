@@ -20,18 +20,26 @@ const getters: GetterTree<StoreState, any> = {
 // actions
 const incrementAction: Action<SumState, any> =
     (context: {commit: Commit; state: SumState}) => context.commit(SUM_MUTATION.increment);
+const decreaseAction: Action<SumState, any> =
+    (context: {commit: Commit; state: SumState}) => context.commit(SUM_MUTATION.decrease);
 
 const actions: ActionTree<SumState, any> = {
     incrementAction,
+    decreaseAction,
 };
 
 // mutations
-const incrementmutations: Mutation<SumState> = (state: SumState) => {
+const incrementmutation: Mutation<SumState> = (state: SumState) => {
     state.sum++;
 };
 
+const decreasemutation: Mutation<SumState> = (state: SumState) => {
+    state.sum--;
+};
+
 const mutations: MutationTree<any> = {
-    incrementmutations,
+    incrementmutation,
+    decreasemutation,
 };
 
 
@@ -44,5 +52,6 @@ export default {
   } as ModuleTree<SumState>;
 
 export enum SUM_MUTATION {
-    increment = 'incrementmutations',
+    increment = 'incrementmutation',
+    decrease = 'decreasemutation',
 }

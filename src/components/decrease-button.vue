@@ -16,11 +16,11 @@ import { InputComponent } from '@/components/abstractComponent/button.ts';
 })
 export default class SumInputComponent extends InputComponent {
 
-    @Action('sum/incrementAction') public incrementAction!: () => void;
+    @Action('sum/decreaseAction') public decreaseAction!: () => void;
 
 
     public clickEvent() {
-        this.incrementAction();
+        this.decreaseAction();
     }
 }
 </script>

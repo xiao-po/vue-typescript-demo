@@ -3,6 +3,7 @@
     <div>
       <span>{{msg}}</span>
       <sum-button></sum-button>
+      <de-button></de-button>
       <br>
       <result-text></result-text>
     </div>
@@ -11,11 +12,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import InputComponent from './sum-button.vue';
+import SumInputComponent from './sum-button.vue';
+import DeInputComponent from './decrease-button.vue';
 import TextComponent from './result-text.vue';
 
 @Component({
-  components: {'sum-button': InputComponent, 'result-text': TextComponent },
+  components: {'sum-button': SumInputComponent, 'result-text': TextComponent, 'de-button': DeInputComponent },
 })
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
